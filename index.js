@@ -6,12 +6,11 @@ let output = doc.querySelector('.output')
 window.onload = function() {
     fetch(url)
             .then(response => response.json())
-            .then(data => loadImages(data))
+            .then(data => renderData(data))
             .catch(err => console.error(err));    
     
 }
-function loadImages(data){
-    console.log(data);
+function renderData(data){
     data.map(user => {
         let block = doc.createElement('div')
         block.className='cart'
